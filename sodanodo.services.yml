@@ -1,0 +1,4 @@
+services:
+  sodanodo:
+    class: Drupal\sodanodo\ZenodoFetcher
+    arguments: ['@http_client', '@database']

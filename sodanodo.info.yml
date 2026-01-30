@@ -1,0 +1,5 @@
+name: Sodanodo (SODa Zenodo Publications)
+type: module
+description: Fetches and displays publications from a Zenodo community as an HTML list.
+core_version_requirement: ^9 || ^10 || ^11
+package: Custom
