@@ -111,10 +111,10 @@ class ZenodoFetcher {
       }, $creator_names);
       if ($include) {
         $html .= sprintf(
-          '<div style="margin-bottom: 0.1em">%s <strong><a href="%s" target="_blank">%s</a></strong><small>%s</small></div>',
-          date("d.m.Y", strtotime($pub['metadata']['publication_date'])),
+          '<div style="margin-bottom: 0.1em"><strong><a href="%s" target="_blank">%s</a></strong><small>(%s) %s</small></div>',
           $pub['links']['self_html'],
           $pub['metadata']['title'],
+          date("d.m.Y", strtotime($pub['metadata']['publication_date'])),
           implode(', ', $creator_names),
           //$pub['metadata']['doi'] ?? 'N/A',
           // $pub['metadata']['publication_date'] ?? 'N/A',
@@ -133,12 +133,12 @@ class ZenodoFetcher {
   protected function storeHtml($html) {
     $node = \Drupal::entityTypeManager()
       ->getStorage('node')
-      ->loadByProperties(['type' => 'zenodo_publications_page']);
+      ->loadByProperties(['title' => 'Publikationsliste']);
 
-    $node = reset($node) ?: Node::create(['type' => 'zenodo_publications_page']);
+    $node = reset($node) ?: Node::create(['title' => 'Publikationsliste']);
 
-    $node->set('title', 'Zenodo Publications');
-    $node->set('field_publications_html', ['value' => $html, 'format' => 'full_html']);
+    //$node->set('title', 'Zenodo Publications');
+    $node->set('body', ['value' => $html, 'format' => 'full_html']);
     $node->save();
   }
 }

@@ -1,7 +1,0 @@
-sodanodo.list:
-  path: '/zenodo-publications'
-  defaults:
-    _controller: '\Drupal\sodanodo\Controller\PublicationsController::list'
-    _title: 'SODanodo Publications'
-  requirements:
-    _permission: 'access content'
