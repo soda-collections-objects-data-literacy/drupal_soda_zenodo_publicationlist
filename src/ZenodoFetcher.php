@@ -87,7 +87,8 @@ class ZenodoFetcher {
     $team_names = ['Gnyp, Anna', 'Tharandt, Louise','Stricker, Martin','Schäffer, Johannes',
         'Reichert, Rebekka','Zöllner. Garbiele','Markert, Michael','Leyrer, Katharina',
         'Amann, Kai','Nasarek, Robert','Neubauer, Julia','Hastik, Canan','Schwenk, Gudrun',
-        'Fichtner, Mark','Andraschke, Udo','Zinnen, Mathias','Cremerius, Julian','Wiesing, Tom'];
+        'Fichtner, Mark','Andraschke, Udo','Zinnen, Mathias','Cremerius, Julian','Wiesing, Tom',
+        'jcremerius','Schwenk, Gudrun A.', 'Stocker, Lea', 'Louise Tharandt', 'Wagner, Lucia'];
     
     $html = '<div class="zenodo-publications-list">';
     foreach ($publications as $pub) {
